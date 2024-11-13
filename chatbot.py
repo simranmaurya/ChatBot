@@ -7,7 +7,11 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain_community.chat_models import ChatOpenAI
 
 
+<<<<<<< HEAD
 key = "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"
+=======
+key = "my-key"
+>>>>>>> 3895d3225f6e03a206daabb786688af23d28bd43
 st.header("My ChatBot")
 
 with st.sidebar:
@@ -43,7 +47,11 @@ if file is not None:
     if user_question:
         match = vector_store.similarity_search(user_question)
 
+<<<<<<< HEAD
         llm = ChatOpenAI(openai_api_key=key, temperature = 0.4,max_tokens = 256, model_name = "gpt-3.5-turbo")
+=======
+        llm = ChatOpenAI(openai_api_key=key, temperature = 0.4,max_tokens = 1000, model_name = "gpt-3.5-turbo")
+>>>>>>> 3895d3225f6e03a206daabb786688af23d28bd43
 
         chain = load_qa_chain(llm,chain_type="stuff")
         bot_response = chain.run(input_documents=match, question = user_question)
